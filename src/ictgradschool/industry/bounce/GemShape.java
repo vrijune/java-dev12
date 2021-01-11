@@ -18,6 +18,8 @@ public class GemShape extends Shape {
     }
 
 
+
+
     @Override
     public void paint(Painter painter) {
 

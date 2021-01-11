@@ -41,7 +41,8 @@ public class RectangleShape extends Shape {
 	public RectangleShape(int x, int y, int deltaX, int deltaY, int width, int height) {
 		super(x,y,deltaX,deltaY,width,height);
 	}
-	
+
+
 	/**
 	 * Paints this RectangleShape object using the supplied Painter object.
 	 */

@@ -87,26 +87,44 @@ public abstract class Shape {
 		if (nextX <= 0) {
 			nextX = 0;
 			fDeltaX = -fDeltaX;
-//			if (isDynamicRectant() == true){
-//				return
-//			}
+
+			if (this instanceof DynamicRectangleShape) {
+				((DynamicRectangleShape) this).setCheckFilled(true);
+			}
 
 		} else if (nextX + fWidth >= width) {
 			nextX = width - fWidth;
 			fDeltaX = -fDeltaX;
 		}
 
+		if(this instanceof DynamicRectangleShape){
+			((DynamicRectangleShape) this).setCheckFilled(true);
+		}
+
 		if (nextY <= 0) {
 			nextY = 0;
 			fDeltaY = -fDeltaY;
+
+			if (this instanceof DynamicRectangleShape){
+				((DynamicRectangleShape)this).setCheckFilled(false);
+			}
+
+
 		} else if (nextY + fHeight >= height) {
 			nextY = height - fHeight;
 			fDeltaY = -fDeltaY;
+
+			if (this instanceof DynamicRectangleShape){
+				((DynamicRectangleShape)this).setCheckFilled(false);
+			}
+
 		}
 
 		fX = nextX;
 		fY = nextY;
 	}
+
+
 
 	/**
 	 * Method to be implemented by concrete subclasses to handle subclass
