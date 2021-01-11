@@ -87,6 +87,10 @@ public abstract class Shape {
 		if (nextX <= 0) {
 			nextX = 0;
 			fDeltaX = -fDeltaX;
+//			if (isDynamicRectant() == true){
+//				return
+//			}
+
 		} else if (nextX + fWidth >= width) {
 			nextX = width - fWidth;
 			fDeltaX = -fDeltaX;
